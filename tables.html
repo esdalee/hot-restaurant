@@ -25,23 +25,41 @@
             <div class="text-center">
                 <a href="/reserve"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Make
                         Reservations</button></a>
-                <a href="/"><button class="btn btn-danger btn-lg"><span
-                            class="fa fa-plus"></span>Home</button></a>
+                <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Home</button></a>
             </div>
         </div>
 
-        <!--Footer linking to APIs-->
-        <footer>
-            <div class="footer">
-                <p>
-                    <a href="">API Table Link</a>
-                    |
-                    <a href="">API Wait List</a>
-                </p>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Current Reservations</h4>
             </div>
+            <section class="panel-body" id="tableSection">
+            </section>
+        </div>
+        <!-- Waiting List Panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Waiting List</h4>
+            </div>
+            <section class="panel-body" id="waitlistSection">
 
-        </footer>
-    </div>
+            </section>
+
+            <!--Footer linking to APIs-->
+            <footer>
+                <div class="footer">
+                    <p>Control Panel</p>
+                    <p>
+                        <a href="#">Clear Table</a>
+                        |
+                        <a href="/api/reservations">API Table Link</a>
+                        |
+                        <a href="/api/waitlist">API Wait List</a>
+                    </p>
+                </div>
+
+            </footer>
+        </div>
 
 
 </body>

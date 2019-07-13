@@ -54,7 +54,7 @@ app.get("/reserve", function(req, res) {
 
 // Waitlist Page
 app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "waitlist.html"));
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 // Displays all characters

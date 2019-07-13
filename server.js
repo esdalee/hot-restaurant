@@ -66,6 +66,11 @@ app.get("/api/reservations", function(req, res) {
   return res.json(reservations);
 });
 
+// Displays all characters
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waitlist);
+});
+
 // Create New Characters - takes in JSON input
 app.post("/api/reservations", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
@@ -92,4 +97,5 @@ app.post("/api/reservations", function(req, res) {
 // Starts the server to begin listening
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
+  console.log("Server listening on: http://localhost:" + PORT);
 });

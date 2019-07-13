@@ -66,6 +66,11 @@ app.get("/api/reservations", function(req, res) {
   return res.json(reservations);
 });
 
+// Displays all characters
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waitlist);
+});
+
 // Create New Characters - takes in JSON input
 app.post("/api/reservations", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user

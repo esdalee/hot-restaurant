@@ -78,6 +78,7 @@
     <script>
 
         $("#submit").on("click", function (event) {
+            console.log("button clicked");
             event.preventDefault();
             var newreservation = {
                 name: $("#NAMEBTN").val().trim(),
@@ -87,7 +88,7 @@
             };
 
             // Sends new entry to server
-            $.post("/reserve", newreservation)
+            $.post("/api/reservations", newreservation)
                 .then(function (data) {
                     console.log(data)
                 });

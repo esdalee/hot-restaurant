@@ -23,8 +23,8 @@
             <hr>
             <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
             <div class="text-center">
-            <a href="/tables.html"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> View Tables</button></a>
-            <a href="/reservations.html"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Make Reservations</button></a>
+            <a href="/tables"><button id="tables" class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> View Tables</button></a>
+            <a href="/reserve"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Make Reservations</button></a>
             </div>  
         </div>
         <footer>
@@ -38,8 +38,30 @@
 
         </footer>
     </div>
-
-
+    <script type="text/javascript">
+        $("#tables").on("click", function() {
+          var reservations = $("#reservations").val().trim();
+    
+          // Using a RegEx Pattern to remove spaces from searchedCharacter
+          // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+          searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+    
+          $.get("/api/characters/" + searchedCharacter, function(data) {
+            console.log(data);
+            if (data) {
+              $("#stats").show();
+              $("#name").text(data.name);
+              $("#role").text(data.role);
+              $("#age").text(data.age);
+              $("#force-points").text(data.forcePoints);
+            }
+            else {
+              $("#name").text("The force is not strong with this one. Your character was not found.");
+              $("#stats").hide();
+            }
+          });
+        });
+      </script>
 </body>
 
 </html>
